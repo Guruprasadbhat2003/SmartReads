@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState, useEffect, ReactNode } from 'react';
+import React, { createContext, useContext, useState, useEffect, ReactNode, useCallback } from 'react';
 import axios from 'axios';
 
 interface Book {
@@ -68,16 +68,16 @@ export const AppProvider = ({ children }: { children: ReactNode }) => {
     fetchBooks();
   }, []);
 
-  const addToRecentlyViewed = (book: Book) => {
+  const addToRecentlyViewed = useCallback((book: Book) => {
     setRecentlyViewed(prev => {
       // Remove the book if it already exists in the array
       const filtered = prev.filter(b => b.id !== book.id);
       // Add the book to the beginning of the array
       return [book, ...filtered].slice(0, 5); // Keep only the 5 most recent
     });
-  };
+  },[]);
 
-  const getRecommendations = async (bookId: number, algorithm = algorithmType) => {
+  const getRecommendations = useCallback(async (bookId: number, algorithm = algorithmType) => {
     try {
       setLoading(true);
       // In a real app, this would be an API call to our backend
@@ -97,12 +97,13 @@ export const AppProvider = ({ children }: { children: ReactNode }) => {
       setLoading(false);
       console.error('Error fetching recommendations:', err);
     }
-  };
+  },[books, algorithmType]);
 
-  const getBookById = (id: number) => {
+  const getBookById =useCallback( (id: number) => {
     return books.find(book => book.id === id);
-  };
-
+  },
+  [books]
+);
   return (
     <AppContext.Provider
       value={{
