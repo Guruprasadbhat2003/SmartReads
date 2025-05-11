@@ -59,7 +59,7 @@ const BookList: React.FC<BookListProps> = ({ title, books, algorithm, loading = 
             rating={book.rating}
             genre={book.genre}
             algorithm={algorithm}
-            similarityScore={Math.random()} // This would come from the API in a real app
+            similarityScore={Math.random()} 
           />
         ))}
       </motion.div>
