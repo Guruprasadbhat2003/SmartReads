@@ -1,6 +1,6 @@
-# BookIQ: ML-Based Book Recommendation System
+# SmartReads: ML-Based Book Recommendation System
 
-BookIQ is a sophisticated book recommendation system that leverages machine learning algorithms to provide personalized book recommendations based on user preferences and book similarities.
+SmartReads is a sophisticated book recommendation system that leverages machine learning algorithms to provide personalized book recommendations based on user preferences and book similarities.
 
 ## Features
 
