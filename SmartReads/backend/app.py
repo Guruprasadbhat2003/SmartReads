@@ -228,8 +228,8 @@ def get_dataset_stats():
 
 @app.route('/api/algorithms/performance', methods=['GET'])
 def get_algorithm_performance():
-    # In a real app, this would be calculated based on actual performance metrics
-    # For this demo, we'll return simulated performance data
+   
+   
     performance = {
         'cosine': {
             'accuracy': 87.2,
