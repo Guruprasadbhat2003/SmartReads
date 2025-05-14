@@ -13,15 +13,11 @@ app = Flask(__name__)
 CORS(app)
 
 # Load the dataset
-# For demonstration, we'll create a sample dataset
-# In a real application, you would load from a CSV or database
 def load_dataset():
     # Check if we have a cached version
     if os.path.exists('backend/data/books.csv'):
         return pd.read_csv('backend/data/books.csv')
     
-    # Create sample data
-    # In a real app, you'd use pd.read_csv('path_to_csv')
     books = []
     for i in range(1, 2001):
         book = {
