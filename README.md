@@ -107,4 +107,4 @@ Groups similar books together based on shared characteristics.
 
 ## License
 
-This project is for educational purposes only.
+This project is for educational purposes only.for any queries contact me gurubhatkodani@gmail.com
